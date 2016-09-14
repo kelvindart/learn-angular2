@@ -18,8 +18,8 @@ Let's start with a simple login form in HTML with Angular 2:
 
 ```html
 <form [ngFormModel]="loginForm" (submit)="doLogin($event)">
-    <input ngControl="email" type="email" placeholder="Your email">
-    <input ngControl="password" type="password" placeholder="Your password">
+    <input formControlName="email" type="email" placeholder="Your email">
+    <input formControlName="password" type="password" placeholder="Your password">
   <button type="submit">Log in</button>
 </form>
 ```
@@ -84,10 +84,10 @@ In practice though, the `FormBuilder` is what we will use to quickly create form
 
 ## Form Directives
 
-You'll notice the lack of `ngModel` anywhere in our form. Instead, we have the `ngControl` decorators that map certain inputs to our control objects:
+You'll notice the lack of `ngModel` anywhere in our form. Instead, we have the `formControlName` decorators that map certain inputs to our control objects:
 
 ```html
-  <input ngControl="email" type="email" placeholder="Your email">
+  <input formControlName="email" type="email" placeholder="Your email">
 ```
 
 This "binds" the email input to the instance of our `email` control.
